@@ -1,6 +1,7 @@
-"""This program evaluates the number of vowels in a string"""
+"""This program evaluates the number of vowels in a string."""
+
 def main():
-    S = input()
+    S = input("Enter a string:")
     num = 0
     for letter in S:
         if letter in ('a', 'e', 'i', 'o', 'u'):
