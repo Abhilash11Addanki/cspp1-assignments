@@ -6,6 +6,5 @@ def main():
         if letter in ('a', 'e', 'i', 'o', 'u'):
             num = num+1
     print(num)
-
 if __name__ == "__main__":
 	main()
