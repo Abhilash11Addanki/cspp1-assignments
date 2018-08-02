@@ -3,9 +3,9 @@ def main():
     S = input()
     num = 0
     for letter in S:
-        if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
+        if letter in ('a','e','i','o','u'):
             num = num+1
     print(num)
 
-if __name__== "__main__":
+if __name__ == "__main__":
 	main()
