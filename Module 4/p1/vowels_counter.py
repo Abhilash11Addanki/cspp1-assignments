@@ -8,4 +8,4 @@ def main():
             num = num+1
     print(num)
 if __name__ == "__main__":
-	main()
+    main()
