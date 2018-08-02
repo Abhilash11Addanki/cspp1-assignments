@@ -3,7 +3,8 @@ def main():
     '''Main function.'''
     str_1 = input()
     max_str = ""
-    for j in range(len(str_1)):
+    len_1 = len(str_1)
+    for j in range(len_1):
         sub_str = ""
         t_1 = str_1[j]
         for i in range(j, len(str_1)):
