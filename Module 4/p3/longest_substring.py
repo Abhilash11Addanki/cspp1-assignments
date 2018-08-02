@@ -4,11 +4,11 @@ def main():
     max_str = ""
     for j in range(len(str_1)):
         sub_str = ""
-        t = str_1[j]
+        t_1 = str_1[j]
         for i in range(j, len(str_1)):
-            if t <= str_1[i]:
-                t = str_1[i]
-                sub_str += t
+            if t_1 <= str_1[i]:
+                t_1 = str_1[i]
+                sub_str += t_1
             else:
                 break
         if len(max_str) < len(sub_str):
