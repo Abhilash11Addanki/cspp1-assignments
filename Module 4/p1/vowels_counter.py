@@ -3,7 +3,7 @@ def main():
     S = input()
     num = 0
     for letter in S:
-        if letter in ('a','e','i','o','u'):
+        if letter in ('a', 'e', 'i', 'o', 'u'):
             num = num+1
     print(num)
 
