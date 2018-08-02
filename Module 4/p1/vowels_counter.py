@@ -5,9 +5,9 @@
 #Number of vowels: 5
 
 def main():
-	s = raw_input()
-	num=0
-        for letter in S1:
+        s = input()
+        num=0
+        for letter in s:
             if letter=="a" or letter=="e" or letter=="i" or letter=="o" or letter=="u":
                 num=num+1
         print(num)
