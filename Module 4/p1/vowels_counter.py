@@ -1,5 +1,6 @@
+"""This program evaluates the numbers of vowels in a string."""
 def main():
-    """This program evaluates the numbers of vowels in a string."""
+    """main function"""
     str_1 = input()
     num = 0
     for letter in str_1:
