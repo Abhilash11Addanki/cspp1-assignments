@@ -9,7 +9,5 @@ def main():
         if str_1[i]+str_1[i+1]+str_1[i+2] == str_2:
             cnt = cnt+1
     print(cnt)
-	
-
 if __name__ == "__main__":
     main()
