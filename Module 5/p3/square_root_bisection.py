@@ -13,5 +13,5 @@ def main():
             high = guess
         guess = (high + low)/2.0
     print(guess)
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
