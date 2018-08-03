@@ -2,15 +2,15 @@
 # using approximation method
 
 def main():
-    s = input()
+    s = int(input())
     epsilon=0.001
     guess=1
     increment=0.0001
-    while abs(guess**2-n)>=epsilon:
+    while abs(guess**2-s)>=epsilon:
         guess+=increment
-    if abs(guess**2-n)>=epsilon:
-        print("Failed on square root of",n)
+    if abs(guess**2-s)>=epsilon:
+        print("Failed on square root of",s)
     else:
-        print(guess,"is close to the square root of",n)
+        print(guess,"is close to the square root of",s)
 if __name__== "__main__":
 	main()
