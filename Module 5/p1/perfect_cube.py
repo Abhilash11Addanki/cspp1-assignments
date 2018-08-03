@@ -11,4 +11,3 @@ def main():
         print(num_1, "is not a perfect cube")
 if __name__ == "__main__":
     main()
-
