@@ -16,7 +16,7 @@ def main():
     low = 0
     high = s
     guess = (high + low)/2.0
-    while abs(guess**2-cube) >= epsilon:
+    while abs(guess**2-s) >= epsilon:
         if guess**2 < s:
             low = guess
         else:
