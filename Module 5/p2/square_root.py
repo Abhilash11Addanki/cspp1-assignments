@@ -1,8 +1,7 @@
 # Write a python program to find the square root of the given number 
 # using approximation method
-
 def main():
-    s = int(input())
+    s=int(input())
     epsilon=0.001
     guess=1
     increment=0.0001
