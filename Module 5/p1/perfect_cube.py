@@ -12,9 +12,9 @@
 def main():
     s = int(input())
     guess=1
-    while guess**3<n:
+    while guess**3<s:
         guess+=1
-        if guess**3==n:
+        if guess**3==s:
             print("Perfect Cube")
         else:
             print("Not a Perfect Cube")
