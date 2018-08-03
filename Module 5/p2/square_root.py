@@ -12,4 +12,4 @@ def main():
     else:
         print(guess,"is close to the square root of",s)
 if __name__== "__main__":
-	main()
+    main()
