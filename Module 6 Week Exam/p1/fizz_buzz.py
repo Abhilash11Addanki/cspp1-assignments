@@ -19,5 +19,6 @@ def main():
             print("Fizz")
         else:
             print(i)
+
 if __name__ == "__main__":
     main()
