@@ -18,7 +18,7 @@ def main():
         rem = int_input%10
         res *= rem
         int_input //= 10
-    if int_input1 > 0:
+    if int_input1 >= 0:
         print(res)
     else:
         print(-res)
