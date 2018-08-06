@@ -28,5 +28,5 @@ def main():
     data = data.split(' ')
     data = list(map(float, data))
     print("Lowest Payment: " + str(round(paying_debtoffinayear(data[0], data[1]), 2)))
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
