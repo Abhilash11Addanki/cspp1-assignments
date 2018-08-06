@@ -6,6 +6,8 @@ def paying_debtoffinayear(balance_num, annual_interestrate):
         b_1 = balance_num
         ar_1 = annual_interestrate
         i = 0
+        if b_1 < 0:
+            return 0
         while i != 12:
             monthly_interestrate = ar_1/12.0
             monthly_unpaidbalance = b_1-minimum_fixedmonthlypayment
@@ -15,8 +17,6 @@ def paying_debtoffinayear(balance_num, annual_interestrate):
             print("Lowest Payment:", minimum_fixedmonthlypayment)
             break
         minimum_fixedmonthlypayment += 10
-        if b_1< 0:
-            return 0
 def main():
     '''Main Function.'''
     data = input()
