@@ -1,13 +1,13 @@
 '''paying_debtoffinayear.'''
 def paying_debtoffinayear(balance_num, annual_interestrate):
     '''Function.'''
+    if balance_num <0:
+        print(0)
     minimum_fixedmonthlypayment = 10
     while True:
         b_1 = balance_num
         ar_1 = annual_interestrate
         i = 0
-        if b_1 < 0:
-            return 0
         while i != 12:
             monthly_interestrate = ar_1/12.0
             monthly_unpaidbalance = b_1-minimum_fixedmonthlypayment
