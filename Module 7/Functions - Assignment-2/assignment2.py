@@ -12,7 +12,7 @@ def paying_debtoffinayear(balance_num, annual_interestrate):
             b_1 = monthly_unpaidbalance+(monthly_interestrate*monthly_unpaidbalance)
             i += 1
         if b_1 <= 0.05:
-            print(minimum_fixedmonthlypayment)
+            print("Lowest Payment:",minimum_fixedmonthlypayment)
             break
         minimum_fixedmonthlypayment += 10
 def main():
