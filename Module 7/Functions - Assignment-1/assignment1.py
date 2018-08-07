@@ -9,12 +9,12 @@ def paying_debtoffinayear(balance_num, annual_interestrate, monthly_paymentrate)
         updatedbalance_num = monthly_unpaidbalance+(monthly_interestrate*monthly_unpaidbalance)
         balance_num = updatedbalance_num
         i += 1
-    return round("Remaining balance:",balance_num, 2)
+    return round(balance_num, 2)
 def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print(paying_debtoffinayear(data[0], data[1], data[2]))
+    print("Remaining balance:",paying_debtoffinayear(data[0], data[1], data[2]))
 if __name__ == "__main__":
     main()
 
