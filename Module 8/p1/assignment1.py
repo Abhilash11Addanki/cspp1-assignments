@@ -10,6 +10,6 @@ def func_factorial(n_1):
 def main():
     '''Main Function.'''
     a_1 = input()
-    print("The factorial of", a_1, "is:", func_factorial(int(a_1)))
+    print(int(a_1))
 if __name__ == "__main__":
     main()
