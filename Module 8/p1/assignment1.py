@@ -9,7 +9,7 @@ def func_factorial(n_1):
     return 1
 def main():
     '''Main Function.'''
-    a_1 = input()
-    print(int(a_1))
+    a_1 = int(input())
+    print(func_factorial(a_1))
 if __name__ == "__main__":
     main()
