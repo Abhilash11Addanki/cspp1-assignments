@@ -13,4 +13,3 @@ def main():
     print(sumofdigits(int(a_1)))
 if __name__ == "__main__":
     main()
-
