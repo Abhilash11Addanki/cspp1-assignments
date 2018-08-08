@@ -23,7 +23,7 @@ def get_guessed_word(secret_word, letters_guessed):
         if cnt_1 == 1:
             res_1 = res_1 + secret_word[i]
         else:
-            res_1 = res_1+" _ "
+            res_1 = res_1+"_"
     return res_1
 def main():
     '''
