@@ -33,7 +33,14 @@ def create_social_network(data):
     '''
 
     # remove the pass below and start writing your code
+    dict_1 = {}
     list_1 = data.split()
+    cnt_1 = 0
+    for i in list_1:
+        if i != "follows":
+            cnt_1 = cnt_1 + 1
+    if cnt_1 == len(list_1):
+        return dict_1
     list_2 = []
     list_3 = []
     for i in range(0, len(list_1), 3):
@@ -45,7 +52,7 @@ def create_social_network(data):
     return dict_1
 def main():
     '''
-        handling testcase input and printing output
+      handling testcase input and printing output
     '''
     string = ''
     lines = int(input())
