@@ -15,7 +15,7 @@ def follow(network, arg1, arg2):
     '''
     for i in network.keys():
         if i == arg1:
-            network[i].extend(list(arg2))
+            network[i].append("".join(arg2))
     return network
 
 def unfollow(network, arg1, arg2):
