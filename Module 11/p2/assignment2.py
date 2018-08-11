@@ -24,7 +24,7 @@ def update_hand(hand, word):
         word_list += i.split(",")
     for i in hand.keys():
         if i in word_list:
-            hand[i] = hand[i]-1
+            hand[i] = hand[i]-word_list.count(i)
     return hand
 def main():
     '''Main Fucntion'''
