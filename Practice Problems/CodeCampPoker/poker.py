@@ -23,13 +23,17 @@ def is_flush(hand):
     Function for finding flush
     '''
     cnt1 = 0
-    if (hand[0][1] == 'D' and hand[1][1] == 'D' and hand[2][1] == 'D' and hand[3][1] == 'D' and hand[4][1] == 'D'):
+    if (hand[0][1] == 'D' and hand[1][1] == 'D' and hand[2][1] == 'D'
+        and hand[3][1] == 'D' and hand[4][1] == 'D'):
         cnt1 = 1
-    elif (hand[0][1] == 'C' and hand[1][1] == 'C' and hand[2][1] == 'C' and hand[3][1] == 'C' and hand[4][1] == 'C'):
+    elif (hand[0][1] == 'C' and hand[1][1] == 'C' and hand[2][1] == 'C'
+          and hand[3][1] == 'C' and hand[4][1] == 'C'):
         cnt1 = 1
-    elif (hand[0][1] == 'H' and hand[1][1] == 'H' and hand[2][1] == 'H' and hand[3][1] == 'H' and hand[4][1] == 'H'):
+    elif (hand[0][1] == 'H' and hand[1][1] == 'H' and hand[2][1] == 'H'
+          and hand[3][1] == 'H' and hand[4][1] == 'H'):
         cnt1 = 1
-    elif (hand[0][1] == 'S' and hand[1][1] == 'S' and hand[2][1] == 'S' and hand[3][1] == 'S' and hand[4][1] == 'S'):
+    elif (hand[0][1] == 'S' and hand[1][1] == 'S' and hand[2][1] == 'S'
+          and hand[3][1] == 'S' and hand[4][1] == 'S'):
         cnt1 = 1
     if cnt1 == 1:
         return True
