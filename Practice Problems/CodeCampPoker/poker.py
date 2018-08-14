@@ -14,13 +14,13 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    a_dict= {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
-    list_1=[]
+    a_dict = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
+    list_1 = []
     for card in hand:
         list_1.append(a_dict[card[0]])
     list_1.sort()
     for each in range(len(list_1)-1):
-        if (list_1[each]-list_1[each+1])!=-1:
+        if (list_1[each]-list_1[each+1]) != -1:
             return False
         return True
 def is_flush(hand):
