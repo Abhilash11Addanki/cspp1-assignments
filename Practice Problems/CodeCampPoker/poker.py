@@ -34,7 +34,7 @@ def is_flush(hand):
         cnt1 = 1
     elif (hand[0][1] == 'S' and hand[1][1] == 'S' and hand[2][1] == 'S'
           and hand[3][1] == 'S' and hand[4][1] == 'S'):
-        cnt1 = 1
+            cnt1 = 1
     if cnt1 == 1:
         return True
     return False
