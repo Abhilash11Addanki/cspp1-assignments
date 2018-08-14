@@ -23,8 +23,10 @@ def is_validword(word, hand, word_list1):
         if i in hand.keys():
             cnt_1 += 1
     if cnt_1 == len(word) and word in word_list1:
-        return True
-    return False
+        score = get_word_score(word, n_num)
+        update_hand(hand, word)
+    else:
+        print("Invalid Word")
 def main():
     '''main function.'''
     word_1 = input()
