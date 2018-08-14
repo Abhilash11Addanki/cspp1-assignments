@@ -8,7 +8,8 @@ def is_straight(hand):
     '''
     Function for finding straight
     '''
-    a_dict = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
+    a_dict = {'2':2, '3':3, '4':4, '5':5, '6':6,
+              '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
     list_1 = []
     for card in hand:
         list_1.append(a_dict[card[0]])
