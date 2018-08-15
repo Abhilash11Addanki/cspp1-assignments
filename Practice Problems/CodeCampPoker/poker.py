@@ -88,17 +88,14 @@ def is_fullhouse(hand):
 def is_twopair(hand):
     '''Function for finding two pair'''
     cnt = 0
-    cnt1 = 0
     list_1=[]
     for i in hand:
         list_1.append(i[0])
     set_1 = set(list_1)
     for i in list_1:
         if list_1.count(i)==2:
-            cnt = 1
-        if list_1.count(i)==2:
-            cnt1 = 1
-    if cnt==1 and cnt1==1 and len(set_1)==3:
+            cnt += 1
+    if cnt==4 and len(set_1)==3:
         return True
     return False    
 def is_onepair(hand):
