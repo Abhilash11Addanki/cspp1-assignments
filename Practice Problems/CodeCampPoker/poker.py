@@ -46,10 +46,10 @@ def is_threeofakind(hand):
     list_1=[]
     for i in hand[0]:
         list_1.append(i[0])
-    for i in list_1:
-        if list_1.count(i)==3:
-            cnt = 1
-    if cnt == 1:
+    for k in list_1:
+        if list_1.count(k)==3:
+            cnt += 1
+    if cnt == 3:
         return True
     return False
 def is_fourofakind(hand):
@@ -60,10 +60,10 @@ def is_fourofakind(hand):
     list_1=[]
     for i in hand[0]:
         list_1.append(i[0])
-    for i in list_1:
-        if list_1.count(i)==4:
-            cnt = 1
-    if cnt == 1:
+    for k in list_1:
+        if list_1.count(k)==4:
+            cnt += 1
+    if cnt == 4:
         return True
     return False
 def hand_rank(hand):
@@ -92,6 +92,7 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
+    print(is_fourofakind(hands))
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
