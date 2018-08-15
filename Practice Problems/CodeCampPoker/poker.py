@@ -8,7 +8,6 @@ def is_straight(hand):
     '''
     Function for finding straight
     '''
-    print(hand)
     a_dict = {'2':2, '3':3, '4':4, '5':5, '6':6,
               '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
     list_1 = []
@@ -23,7 +22,6 @@ def is_flush(hand):
     '''
     Function for finding flush
     '''
-    print(hand)
     cnt1 = 0
     if (hand[0][1] == 'D' and hand[1][1] == 'D' and hand[2][1] == 'D'
         and hand[3][1] == 'D' and hand[4][1] == 'D'):
@@ -44,7 +42,6 @@ def is_threeofakind(hand):
     '''
     Function for finding three of a kind
     '''
-    print(hand)
     cnt = 0
     list_1=[]
     for i in hand:
@@ -61,7 +58,6 @@ def is_fourofakind(hand):
     '''
     Function for finding four of a kind
     '''
-    print(hand)
     cnt = 0
     list_1=[]
     for i in hand:
@@ -75,7 +71,6 @@ def is_fourofakind(hand):
     return False
 def is_fullhouse(hand):
     '''Function for finding full house'''
-    print(hand)
     cnt = 0
     cnt1 = 0
     list_1=[]
@@ -108,7 +103,6 @@ def is_twopair(hand):
     return False    
 def is_onepair(hand):
     '''Function for finding one pair'''
-    print(hand)
     cnt = 0
     list_1=[]
     for i in hand:
@@ -140,7 +134,7 @@ def hand_rank(hand):
         return 2
     if is_onepair(hand):
         return 1
-    #return 0
+    return 0
 
 def poker(hands):
     '''
