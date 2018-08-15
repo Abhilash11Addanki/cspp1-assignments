@@ -44,7 +44,7 @@ def is_threeofakind(hand):
     '''
     cnt = 0
     list_1=[]
-    for i in hand[0]:
+    for i in hand:
         list_1.append(i[0])
     return list_1
     set_1 = set(list_1)
