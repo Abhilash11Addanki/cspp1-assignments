@@ -69,13 +69,28 @@ def is_fourofakind(hand):
     if cnt == 1:
         return True
     return False
+def is_onepair(hand):
+    '''Function for finding one pair'''
+    cnt = 0
+    list_1=[]
+    for i in hand:
+        list_1.append(i[0])
+    set_1 = set(list_1)
+    for i in list_1:
+        if list_1.count(i)==2 and len(set_1)==4:
+            cnt = 1
+    if cnt == 1:
+        return True
+    return False
 def hand_rank(hand):
     '''
     Function for finding the rank of a hand
     '''
     if is_straight(hand) and is_flush(hand):
-        return 5
+        return 6
     if is_fourofakind(hand):
+        return 5
+    if is_threeofakind(hand) and is_onepair(hand):
         return 4
     if is_flush(hand):
         return 3
