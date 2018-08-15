@@ -85,6 +85,22 @@ def is_fullhouse(hand):
     if cnt==1 and cnt1==1 and len(set_1)==2:
         return True
     return False
+def is_twopair(hand):
+    '''Function for finding two pair'''
+    cnt = 0
+    cnt1 = 0
+    list_1=[]
+    for i in hand:
+        list_1.append(i[0])
+    set_1 = set(list_1)
+    for i in list_1:
+        if list_1.count(i)==2:
+            cnt = 1
+        if list_1.count(i)==2:
+            cnt1 = 1
+    if cnt==1 and cnt1==1 and len(set_1)==3:
+        return True
+    return False    
 def is_onepair(hand):
     '''Function for finding one pair'''
     cnt = 0
@@ -103,16 +119,18 @@ def hand_rank(hand):
     Function for finding the rank of a hand
     '''
     if is_straight(hand) and is_flush(hand):
-        return 6
+        return 7
     if is_fourofakind(hand):
-        return 5
+        return 6
     if is_fullhouse(hand):
-        return 4
+        return 5
     if is_flush(hand):
-        return 3
+        return 4
     if is_straight(hand):
-        return 2
+        return 3
     if is_threeofakind(hand):
+        return 2
+    if is_twopair(hand):
         return 1
     return 0
 
