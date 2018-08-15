@@ -87,6 +87,7 @@ def is_fullhouse(hand):
     return False
 def is_twopair(hand):
     '''Function for finding two pair'''
+    print(hand)
     cnt = 0
     list_1=[]
     for i in hand:
@@ -145,6 +146,7 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
+    #is_twopair(hands)
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
