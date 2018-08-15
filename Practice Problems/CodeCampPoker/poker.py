@@ -91,7 +91,9 @@ def is_twopair(hand):
     list_1=[]
     for i in hand:
         list_1.append(i[0])
+    print(list_1)
     set_1 = set(list_1)
+    print(set_1)
     for i in set_1:
         if list_1.count(i)==2:
             cnt += 1
