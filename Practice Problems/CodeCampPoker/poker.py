@@ -94,7 +94,6 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
-    print(is_threeofakind(hands))
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
