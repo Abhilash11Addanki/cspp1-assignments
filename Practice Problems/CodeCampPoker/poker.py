@@ -49,11 +49,24 @@ def is_threeofakind(hand):
         if list_1.count(i[0])==3:
             return True
         return False
+def is_fourofakind(hand):
+    '''
+    Function for finding three of a kind
+    '''
+    list_1=[]
+    for i in hand[0]:
+        list_1.append(i[0])
+    for i in hand[0]:
+        if list_1.count(i[0])==4:
+            return True
+        return False
 def hand_rank(hand):
     '''
     Function for finding the rank of a hand
     '''
     if is_straight(hand) and is_flush(hand):
+        return 5
+    if is_fourofakind(hand):
         return 4
     if is_flush(hand):
         return 3
