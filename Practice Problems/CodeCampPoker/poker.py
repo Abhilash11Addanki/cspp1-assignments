@@ -23,19 +23,23 @@ def is_flush(hand):
     Function for finding flush
     '''
     cnt1 = 0
-    if (hand[0][1] == 'D' and hand[1][1] == 'D' and hand[2][1] == 'D'
-        and hand[3][1] == 'D' and hand[4][1] == 'D'):
-        cnt1 = 1
-    elif (hand[0][1] == 'C' and hand[1][1] == 'C' and hand[2][1] == 'C'
-          and hand[3][1] == 'C' and hand[4][1] == 'C'):
-        cnt1 = 1
-    elif (hand[0][1] == 'H' and hand[1][1] == 'H' and hand[2][1] == 'H'
-          and hand[3][1] == 'H' and hand[4][1] == 'H'):
-        cnt1 = 1
-    elif (hand[0][1] == 'S' and hand[1][1] == 'S' and hand[2][1] == 'S'
-          and hand[3][1] == 'S' and hand[4][1] == 'S'):
-        cnt1 = 1
-    if cnt1 == 1:
+    cnt2 = 0
+    cnt3 = 0
+    cnt4 = 0
+    list_1=[]
+    for i in hand:
+        list_1.append(i[1])
+    set_1 = set(list_1)
+    for i in list_1:
+        if list_1[i]=='D' and len(set_1)==1:
+            cnt1 += 1
+        elif list_1[i]=='C' and len(set_1)==1:
+            cnt2 += 1
+        elif list_1[i]=='S' and len(set_1)==1:
+            cnt3 += 1
+        elif list_1[i]=='H' and len(set_1)==1:
+            cnt4 += 1
+    if cnt1 == 5 or cnt2 == 5 or cnt3 == 5 or cnt4 == 5:
         return True
     return False
 def is_threeofakind(hand):
@@ -46,7 +50,6 @@ def is_threeofakind(hand):
     list_1=[]
     for i in hand:
         list_1.append(i[0])
-    return list_1
     set_1 = set(list_1)
     for i in list_1:
         if list_1.count(i)==3 and len(set_1)==3:
@@ -87,19 +90,16 @@ def is_fullhouse(hand):
     return False
 def is_twopair(hand):
     '''Function for finding two pair'''
-    print(hand)
     cnt = 0
     list_1=[]
     for i in hand:
         list_1.append(i[0])
-    print(list_1)
     set_1 = set(list_1)
-    print(set_1)
-    for i in set_1:
+    for i in list_1:
         if list_1.count(i)==2:
             cnt += 1
-            if cnt==2:
-                return True
+    if cnt==4 and len(set_1)==3:
+        return True
     return False    
 def is_onepair(hand):
     '''Function for finding one pair'''
@@ -146,7 +146,6 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
-    #is_twopair(hands)
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
