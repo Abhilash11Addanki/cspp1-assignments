@@ -5,7 +5,7 @@
 '''
 def get_faceval(hand):
     '''Function for getting the face values'''
-    return sorted(['--23456789TJQKA'.index(face) for face,suite in hand], reverse=True)
+    return sorted(['--23456789TJQKA'.index(face) for face, suite in hand], reverse=True)
 def is_straight(hand):
     '''Function for finding straight'''
     face_val = get_faceval(hand)
@@ -27,8 +27,8 @@ def hand_rank(hand):
     face_val = get_faceval(hand)
     return ((8, face_val) if is_flush(hand) and is_straight(hand) else
             (7, kind(face_val, 4), face_val) if kind(face_val, 4) else
-            (6, kind(face_val, 3), kind(face_val, 2)) if kind(face_val, 3) and
-             kind(face_val, 2) else
+            (6, kind(face_val, 3), kind(face_val, 2)) if kind(face_val, 3)
+            and kind(face_val, 2) else
             (5, face_val) if is_flush(hand) else
             (4, face_val) if is_straight(hand) else
             (3, kind(face_val, 3), face_val) if kind(face_val, 3) else
