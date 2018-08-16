@@ -127,7 +127,7 @@ def is_royalflush(hand):
         list_1.append(i[0])
     for i in hand:
         list_2.append(i[1])
-    if A,K,Q,J,T in list_1:
+    if 'AKQJT' in list_1:
         cnt = 1
     for i in list_1:
         if i=='D' and len(set_1)==1:
