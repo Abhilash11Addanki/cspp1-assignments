@@ -27,10 +27,10 @@ def is_flush(hand):
     for i in hand:
         list_1.append(i[1])
     set_1 = set(list_1)
-    for i in list_1:
-        if i in 'DCHS':
-            cnt += 1
-    if cnt == 5 and len(set_1) == 1:
+    for i in set_1:
+        if list_1.count(i)==5:
+            cnt = 1
+    if cnt == 1 and len(set_1) == 1:
         return True
     return False
 def is_threeofakind(hand):
