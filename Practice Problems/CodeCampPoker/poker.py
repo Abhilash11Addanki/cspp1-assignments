@@ -124,7 +124,7 @@ def is_highcard(hand):
     list_2.sort(reverse=True)
     for i in list_1[0]:
         for j in list_2[0]:
-            if a_dict(i)>a_dict(j):
+            if a_dict(i[0])>a_dict(j[0]):
                 return True
             return False
     
