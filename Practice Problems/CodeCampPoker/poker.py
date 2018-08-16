@@ -76,7 +76,7 @@ def is_fullhouse(hand):
             cnt += 1
         if list_1.count(i)==2:
             cnt1 += 1
-    if cnt==3 and cnt1==2 and len(set_1)==2:
+    if (cnt==3 and cnt1==2) and len(set_1)==2:
         return True
     return False
 def is_twopair(hand):
