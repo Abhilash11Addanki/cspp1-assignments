@@ -118,27 +118,46 @@ def is_royalflush(hand):
     if cnt == 5 and len(set_1) == 5:
         return True
     return False
+def is_highcard(hand):
+    '''Function for finding highcard'''
+    a_dict = {'2':2, '3':3, '4':4, '5':5, '6':6,
+              '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
+    list_3 = []
+    list_4 = []
+    list_1 = hand[0]
+    list_2 = hand[1]
+    list_1.sort(reverse=True)
+    list_2.sort(reverse=True)
+    for i in list_1:
+        list_3 += [a_dict[i]]
+    for i in list_2:
+        list_4 += [a_dict[i]]
+    if max(list_3)>max(list_4):
+        return True
+    return False
 def hand_rank(hand):
     '''
     Function for finding the rank of a hand
     '''
     if is_royalflush(hand) and is_flush(hand):
-        return 9
+        return 10
     if is_straight(hand) and is_flush(hand):
-        return 8
+        return 9
     if is_fourofakind(hand):
-        return 7
+        return 8
     if is_fullhouse(hand):
-        return 6
+        return 7
     if is_flush(hand):
-        return 5
+        return 6
     if is_straight(hand):
-        return 4
+        return 5
     if is_threeofakind(hand):
-        return 3
+        return 4
     if is_twopair(hand):
-        return 2
+        return 3
     if is_onepair(hand):
+        return 2
+    if is_highcard(hand):
         return 1
     return 0
 
