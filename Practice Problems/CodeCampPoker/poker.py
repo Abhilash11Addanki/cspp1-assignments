@@ -31,13 +31,13 @@ def is_flush(hand):
         list_1.append(i[1])
     set_1 = set(list_1)
     for i in list_1:
-        if list_1[i]=='D' and len(set_1)==1:
+        if i=='D' and len(set_1)==1:
             cnt1 += 1
-        elif list_1[i]=='C' and len(set_1)==1:
+        elif i=='C' and len(set_1)==1:
             cnt2 += 1
-        elif list_1[i]=='S' and len(set_1)==1:
+        elif i=='S' and len(set_1)==1:
             cnt3 += 1
-        elif list_1[i]=='H' and len(set_1)==1:
+        elif i=='H' and len(set_1)==1:
             cnt4 += 1
     if cnt1 == 5 or cnt2 == 5 or cnt3 == 5 or cnt4 == 5:
         return True
