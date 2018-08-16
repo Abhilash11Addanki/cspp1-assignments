@@ -73,10 +73,10 @@ def is_fullhouse(hand):
     set_1 = set(list_1)
     for i in list_1:
         if list_1.count(i)==3:
-            cnt = 1
+            cnt += 1
         if list_1.count(i)==2:
-            cnt1 = 1
-    if cnt==1 and cnt1==1 and len(set_1)==2:
+            cnt1 += 1
+    if cnt==3 and cnt1==2 and len(set_1)==2:
         return True
     return False
 def is_twopair(hand):
