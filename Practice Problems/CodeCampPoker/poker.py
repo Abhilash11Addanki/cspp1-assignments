@@ -89,7 +89,7 @@ def is_twopair(hand):
     for i in set_1:
         if list_1.count(i)==2:
             cnt += 1
-    if cnt==4 and len(set_1)==3:
+    if cnt==2 and len(set_1)==3:
         return True
     return False    
 def is_onepair(hand):
