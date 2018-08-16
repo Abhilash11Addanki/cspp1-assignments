@@ -22,24 +22,15 @@ def is_flush(hand):
     '''
     Function for finding flush
     '''
-    cnt1 = 0
-    cnt2 = 0
-    cnt3 = 0
-    cnt4 = 0
+    cnt = 0
     list_1=[]
     for i in hand:
         list_1.append(i[1])
     set_1 = set(list_1)
     for i in list_1:
-        if i=='D' and len(set_1)==1:
-            cnt1 += 1
-        elif i=='C' and len(set_1)==1:
-            cnt2 += 1
-        elif i=='S' and len(set_1)==1:
-            cnt3 += 1
-        elif i=='H' and len(set_1)==1:
-            cnt4 += 1
-    if cnt1 == 5 or cnt2 == 5 or cnt3 == 5 or cnt4 == 5:
+        if i in 'DCHS':
+            cnt += 1
+    if cnt == 5 and len(set_1) == 1:
         return True
     return False
 def is_threeofakind(hand):
