@@ -43,9 +43,9 @@ def is_threeofakind(hand):
         list_1.append(i[0])
     set_1 = set(list_1)
     for i in list_1:
-        if list_1.count(i)==3 and len(set_1)==3:
-            cnt = 1
-    if cnt == 1:
+        if list_1.count(i)==3:
+            cnt += 1
+    if cnt == 3 and len(set_1) == 3:
         return True
     return False
 def is_fourofakind(hand):
@@ -58,9 +58,9 @@ def is_fourofakind(hand):
         list_1.append(i[0])
     set_1 = set(list_1)
     for i in list_1:
-        if list_1.count(i)==4 and len(set_1)==2:
-            cnt = 1
-    if cnt == 1:
+        if list_1.count(i)==4:
+            cnt += 1
+    if cnt == 4 and len(set_1) == 2:
         return True
     return False
 def is_fullhouse(hand):
