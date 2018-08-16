@@ -4,19 +4,21 @@
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 def get_faceval(hand):
+    '''Function for getting the face values'''
     return sorted(['--23456789TJQKA'.index(face) for face,suite in hand], reverse=True)
 def is_straight(hand):
     '''Function for finding straight'''
     face_val = get_faceval(hand)
-    if face_val == [14,5,4,3,2]:
-        face_val = [5,4,3,2,1]
+    if face_val == [14, 5, 4, 3, 2]:
+        face_val = [5, 4, 3, 2, 1]
     set_1 = set(face_val)
-    return (len(set_1)==5) and ((max(set_1)-min(set_1)) == 4)
+    return (len(set_1) == 5) and ((max(set_1)-min(set_1)) == 4)
 def is_flush(hand):
     '''Function for finding flush'''
     set_1 = set([suite for face, suite in hand])
     return len(set_1) == 1
 def kind(face_val, n_1):
+    '''Function for finding the kind'''
     for face in face_val:
         if face_val.count(face) == n_1:
             return face
