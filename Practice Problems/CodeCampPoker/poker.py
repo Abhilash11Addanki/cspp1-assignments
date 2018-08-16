@@ -122,19 +122,13 @@ def is_highcard(hand):
     '''Function for finding highcard'''
     a_dict = {'2':2, '3':3, '4':4, '5':5, '6':6,
               '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
-    list_3 = []
-    list_4 = []
-    list_1 = hand[0]
-    list_2 = hand[1]
-    list_1.sort(reverse=True)
-    list_2.sort(reverse=True)
-    for i in list_1:
-        list_3 += [a_dict[i]]
-    for i in list_2:
-        list_4 += [a_dict[i]]
-    if max(list_3)>max(list_4):
-        return True
-    return False
+    hand[0].sort(reverse=True)
+    hand[1].sort(reverse=True)
+    for i in hand[0]:
+        for j in hand[1]:
+            if i[0]>j[0]:
+                return True
+            return False
 def hand_rank(hand):
     '''
     Function for finding the rank of a hand
