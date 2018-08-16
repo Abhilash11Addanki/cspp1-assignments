@@ -86,7 +86,7 @@ def is_twopair(hand):
     for i in hand:
         list_1.append(i[0])
     set_1 = set(list_1)
-    for i in list_1:
+    for i in set_1:
         if list_1.count(i)==2:
             cnt += 1
     if cnt==4 and len(set_1)==3:
