@@ -138,7 +138,7 @@ def is_royalflush(hand):
             cnt3 += 1
         elif i=='H' and len(set_1)==1:
             cnt4 += 1
-    if cnt = 1 and (cnt1 == 5 or cnt2 == 5 or cnt3 == 5 or cnt4 == 5):
+    if cnt == 1 and (cnt1 == 5 or cnt2 == 5 or cnt3 == 5 or cnt4 == 5):
         return True
     return False
 def hand_rank(hand):
