@@ -114,7 +114,33 @@ def is_onepair(hand):
     if cnt == 1:
         return True
     return False
-    
+def is_royalflush(hand):
+    '''Function for finding royal flush'''
+    cnt = 0
+    cnt1 = 0
+    cnt2 = 0
+    cnt3 = 0
+    cnt4 = 0
+    list_1=[]
+    list_2=[]
+    for i in hand:
+        list_1.append(i[0])
+    for i in hand:
+        list_2.append(i[1])
+    if A,K,Q,J,T in list_1:
+        cnt = 1
+    for i in list_1:
+        if i=='D' and len(set_1)==1:
+            cnt1 += 1
+        elif i=='C' and len(set_1)==1:
+            cnt2 += 1
+        elif i=='S' and len(set_1)==1:
+            cnt3 += 1
+        elif i=='H' and len(set_1)==1:
+            cnt4 += 1
+    if cnt = 1 and (cnt1 == 5 or cnt2 == 5 or cnt3 == 5 or cnt4 == 5):
+        return True
+    return False
 def hand_rank(hand):
     '''
     Function for finding the rank of a hand
@@ -147,6 +173,7 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
+    is_highcard(hands)
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
