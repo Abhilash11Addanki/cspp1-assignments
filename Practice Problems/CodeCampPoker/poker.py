@@ -145,6 +145,8 @@ def hand_rank(hand):
     '''
     Function for finding the rank of a hand
     '''
+    if is_royalflush(hand):
+        return 9
     if is_straight(hand) and is_flush(hand):
         return 8
     if is_fourofakind(hand):
@@ -173,7 +175,6 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
-    is_highcard(hands)
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
