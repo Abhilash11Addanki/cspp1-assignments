@@ -122,7 +122,7 @@ def is_royalflush(hand):
         list_1.append(i[0])
     set_1 = set(list_1)
     for i in list_1:
-        if list_1[i] in 'AKQJT' and list_1[i+1] in 'AKQJT' and list_1[i+2] in 'AKQJT' and list_1[i+3] in 'AKQJT' and list_1[i+4] in 'AKQJT':
+        if i in 'AKQJT' and i in 'AKQJT' and i in 'AKQJT' and i in 'AKQJT' and i in 'AKQJT':
             cnt = 1
     if cnt == 1 and len(set_1) == 5:
         return True
