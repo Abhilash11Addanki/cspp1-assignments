@@ -114,25 +114,41 @@ def is_onepair(hand):
     if cnt == 1:
         return True
     return False
+def is_highcard(hand):
+    '''Function for finding high card'''
+    a_dict = {'2':2, '3':3, '4':4, '5':5, '6':6,
+              '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}    
+    list_1=hand[0]
+    list_1.sort(reverse=True)
+    list_2=hand[1]
+    list_2.sort(reverse=True)
+    for i in list_1[0]:
+        for j in list_2[0]:
+            if a_dict(i)>a_dict(j):
+                return True
+            return False
+    
 def hand_rank(hand):
     '''
     Function for finding the rank of a hand
     '''
     if is_straight(hand) and is_flush(hand):
-        return 8
+        return 9
     if is_fourofakind(hand):
-        return 7
+        return 8
     if is_fullhouse(hand):
-        return 6
+        return 7
     if is_flush(hand):
-        return 5
+        return 6
     if is_straight(hand):
-        return 4
+        return 5
     if is_threeofakind(hand):
-        return 3
+        return 4
     if is_twopair(hand):
-        return 2
+        return 3
     if is_onepair(hand):
+        return 2
+    if is_highcard(hand):
         return 1
     return 0
 
@@ -146,6 +162,7 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
+    print(is_highcard(hands))
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
