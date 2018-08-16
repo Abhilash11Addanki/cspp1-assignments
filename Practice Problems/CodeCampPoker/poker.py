@@ -126,7 +126,7 @@ def is_highcard(hand):
         list_1.append(i[0])
     set_1 = set(list_1)
     for i in list_1:
-        if i=='A':
+        if i in 'AKQJT':
             cnt = 1
     if cnt == 1 and len(set_1) == 5:
         return True
