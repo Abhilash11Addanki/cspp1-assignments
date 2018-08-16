@@ -16,7 +16,9 @@ def is_straight(hand):
 def is_flush(hand):
     '''Function for finding flush'''
     set_1 = set([suite for face, suite in hand])
-    return len(set_1) == 1
+    if len(set_1) == 1:
+        return True
+    return False
 def kind(face_val, n_1):
     '''Function for finding the kind'''
     for face in face_val:
