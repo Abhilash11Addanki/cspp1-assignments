@@ -117,35 +117,21 @@ def is_onepair(hand):
 def is_royalflush(hand):
     '''Function for finding royal flush'''
     cnt = 0
-    cnt1 = 0
-    cnt2 = 0
-    cnt3 = 0
-    cnt4 = 0
     list_1=[]
-    list_2=[]
     for i in hand:
         list_1.append(i[0])
-    for i in hand:
-        list_2.append(i[1])
-    if 'AKQJT' in list_1:
-        cnt = 1
+    set_1 = set(list_1)
     for i in list_1:
-        if i=='D' and len(set_1)==1:
-            cnt1 += 1
-        elif i=='C' and len(set_1)==1:
-            cnt2 += 1
-        elif i=='S' and len(set_1)==1:
-            cnt3 += 1
-        elif i=='H' and len(set_1)==1:
-            cnt4 += 1
-    if cnt == 1 and (cnt1 == 5 or cnt2 == 5 or cnt3 == 5 or cnt4 == 5):
+        if list_1[i] in 'AKQJT' and list_1[i+1] in 'AKQJT' and list_1[i+2] in 'AKQJT' and list_1[i+3] in 'AKQJT' and list_1[i+4] in 'AKQJT':
+            cnt = 1
+    if cnt == 1 and len(set_1) == 5:
         return True
     return False
 def hand_rank(hand):
     '''
     Function for finding the rank of a hand
     '''
-    if is_royalflush(hand):
+    if is_royalflush(hand) and is_flush(hand):
         return 9
     if is_straight(hand) and is_flush(hand):
         return 8
