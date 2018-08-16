@@ -3,143 +3,37 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+def get_faceval(hand):
+    return sorted(['--23456789TJQKA'.index(face) for face,suite in hand], reverse=True)
 def is_straight(hand):
-    '''
-    Function for finding straight
-    '''
-    a_dict = {'2':2, '3':3, '4':4, '5':5, '6':6,
-              '7':7, '8':8, '9':9, 'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
-    list_1 = []
-    for card in hand:
-        list_1.append(a_dict[card[0]])
-    list_1.sort()
-    for each in range(len(list_1)-1):
-        if (list_1[each]-list_1[each+1]) != -1:
-            return False
-        return True
+    '''Function for finding straight'''
+    face_val = get_faceval(hand)
+    if face_val == [14,5,4,3,2]:
+        face_val = [5,4,3,2,1]
+    set_1 = set(face_val)
+    return (len(set_1)==5) and ((max(set_1)-min(set_1)) == 4)
 def is_flush(hand):
-    '''
-    Function for finding flush
-    '''
-    cnt = 0
-    list_1=[]
-    for i in hand:
-        list_1.append(i[1])
-    set_1 = set(list_1)
-    for i in set_1:
-        if list_1.count(i)==5:
-            cnt = 1
-    if cnt == 1 and len(set_1) == 1:
-        return True
-    return False
-def is_threeofakind(hand):
-    '''
-    Function for finding three of a kind
-    '''
-    cnt = 0
-    list_1=[]
-    for i in hand:
-        list_1.append(i[0])
-    set_1 = set(list_1)
-    for i in set_1:
-        if list_1.count(i)==3:
-            cnt = 1
-    if cnt == 1 and len(set_1) == 3:
-        return True
-    return False
-def is_fourofakind(hand):
-    '''
-    Function for finding four of a kind
-    '''
-    cnt = 0
-    list_1=[]
-    for i in hand:
-        list_1.append(i[0])
-    set_1 = set(list_1)
-    for i in set_1:
-        if list_1.count(i)==4:
-            cnt = 1
-    if cnt == 1 and len(set_1) == 2:
-        return True
-    return False
-def is_fullhouse(hand):
-    '''Function for finding full house'''
-    cnt = 0
-    cnt1 = 0
-    list_1=[]
-    for i in hand:
-        list_1.append(i[0])
-    set_1 = set(list_1)
-    for i in set_1:
-        if list_1.count(i)==3:
-            cnt = 1
-        if list_1.count(i)==2:
-            cnt1 = 1
-    if (cnt==1 and cnt1==1) and len(set_1)==2:
-        return True
-    return False
-def is_twopair(hand):
-    '''Function for finding two pair'''
-    cnt = 0
-    list_1=[]
-    for i in hand:
-        list_1.append(i[0])
-    set_1 = set(list_1)
-    for i in set_1:
-        if list_1.count(i)==2:
-            cnt += 1
-    if cnt==2 and len(set_1)==3:
-        return True
-    return False    
-def is_onepair(hand):
-    '''Function for finding one pair'''
-    cnt = 0
-    list_1=[]
-    for i in hand:
-        list_1.append(i[0])
-    set_1 = set(list_1)
-    for i in set_1:
-        if list_1.count(i)==2:
-            cnt = 1
-    if cnt == 1 and len(set_1) == 4:
-        return True
-    return False
-def is_royalflush(hand):
-    '''Function for finding royal flush'''
-    cnt = 0
-    list_1=[]
-    for i in hand:
-        list_1.append(i[0])
-    set_1 = set(list_1)
-    for i in set_1:
-        if i in 'AKQJT':
-            cnt += 1
-    if cnt == 5 and len(set_1) == 5:
-        return True
-    return False
+    '''Function for finding flush'''
+    set_1 = set([suite for face, suite in hand])
+    return len(set_1) == 1
+def kind(face_val, n_1):
+    for face in face_val:
+        if face_val.count(face) == n_1:
+            return face
 def hand_rank(hand):
-    '''
-    Function for finding the rank of a hand
-    '''
-    if is_royalflush(hand) and is_flush(hand):
-        return 9
-    if is_straight(hand) and is_flush(hand):
-        return 8
-    if is_fourofakind(hand):
-        return 7
-    if is_fullhouse(hand):
-        return 6
-    if is_flush(hand):
-        return 5
-    if is_straight(hand):
-        return 4
-    if is_threeofakind(hand):
-        return 3
-    if is_twopair(hand):
-        return 2
-    if is_onepair(hand):
-        return 1
-    return 0
+    '''Function for finding the rank of a hand'''
+    face_val = get_faceval(hand)
+    return ((8, face_val) if is_flush(hand) and is_straight(hand) else
+            (7, kind(face_val, 4), face_val) if kind(face_val, 4) else
+            (6, kind(face_val, 3), kind(face_val, 2)) if kind(face_val, 3) and
+             kind(face_val, 2) else
+            (5, face_val) if is_flush(hand) else
+            (4, face_val) if is_straight(hand) else
+            (3, kind(face_val, 3), face_val) if kind(face_val, 3) else
+            (2, kind(face_val, 2), kind(sorted(face_val), 2), face_val)
+            if kind(face_val, 2) and kind(sorted(face_val), 2) else
+            (1, kind(face_val, 2), face_val) if kind(face_val, 2) else
+            (0, face_val))
 
 def poker(hands):
     '''
