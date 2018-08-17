@@ -10,7 +10,7 @@ def word_list(string):
     word_s = []
     for w in word:
         list_.append(w.strip())
-    regex = re.compile([^'a-z'])
+    regex = re.compile('[^a-z]')
     for w in list_:
         word_s.append(regex.sub("", w))
     return word_s
