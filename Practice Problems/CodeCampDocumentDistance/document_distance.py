@@ -34,9 +34,9 @@ def similarity(dict1, dict2):
     dict_1 = create_dict(dict_1, word_1, 0)
     dict_1 = create_dict(dict_1, word_2, 1)
     words_freq = remove_stopwords(dict_1, stop_word)
-    numer_n = sum([v[0]*v[1] for v in word_freq.values()])
-    denom_1 = math.sqrt(sum([v[0]**2 for v in word_freq.values()]))
-    denom_2 = math.sqrt(sum([v[1]**2 for v in word_freq.values()]))
+    numer_n = sum([v[0]*v[1] for v in words_freq.values()])
+    denom_1 = math.sqrt(sum([v[0]**2 for v in words_freq.values()]))
+    denom_2 = math.sqrt(sum([v[1]**2 for v in words_freq.values()]))
     return numer_n/(denom_1*denom_2)
 def load_stopwords(filename):
     '''
