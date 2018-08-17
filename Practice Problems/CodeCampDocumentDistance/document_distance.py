@@ -42,7 +42,7 @@ def similarity(dict1, dict2):
     d_1 = round(math.sqrt(denom_n1), 1)
     d_2 = round(math.sqrt(denom_n2), 1)
     denom_n = d_1*d_2
-    return (round(numer_n/denom_n, 1))
+    return round(numer_n/denom_n, 1)
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
