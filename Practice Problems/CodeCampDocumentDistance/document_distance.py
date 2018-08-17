@@ -25,9 +25,9 @@ def similarity(dict1, dict2):
         dict_2[i] = list_2.count(i)
     dict_3 = load_stopwords("stopwords.txt")
     for i in dict_3:
-        if i in dict_1.keys():
+        if i in dict_1:
             del dict_1[i]
-        if i in dict_2.keys():
+        if i in dict_2:
             del dict_2[i]
     for i in list_3:
         word_freq[i] = [list_1.count(i), list_2.count(i)]
