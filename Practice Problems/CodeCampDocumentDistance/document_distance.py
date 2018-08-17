@@ -2,7 +2,7 @@
     Document Distance - A detailed description is given in the PDF
 '''
 import math
-def similarity(dict1, dict2):
+def similarity(dict1.lower(), dict2.lower()):
     '''
         Compute the document distance as given in the PDF
     '''
@@ -57,7 +57,7 @@ def main():
     input1 = input()
     input2 = input()
 
-    print(similarity(input1.lower(), input2.lower()))
+    print(similarity(input1, input2)
 
 if __name__ == '__main__':
     main()
