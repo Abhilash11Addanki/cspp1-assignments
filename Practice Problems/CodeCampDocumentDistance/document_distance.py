@@ -2,29 +2,38 @@
     Document Distance - A detailed description is given in the PDF
 '''
 import math
+def word_list(string):
+    word = string.lower()
+    word = word.split(" ")
+    list_ = []
+    for w in word:
+        list_.append(w.strip())
+    for i in list_:
+        if i in "!@#$%^&*()_-+":
+            list_.remove(i)
+    return list_
+def create_dict(dict_1, word, index):
+    for w in word:
+        if w not in dict_1.keys():
+            dict_1[w] = [0,0]
+        dict_1[w][index]+=1
+    return dict_1
+def remove_stopwords(dict_1, stop_word):
+    for i in stop_word.keys():
+        if i in dict_1.keys():
+            del dict_1[i]
+    return dict_1
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    dict1 = dict1.lower()
-    dict2 = dict2.lower()
-    a_dict = {}
-    word_freq = {}
-    list_1 = dict1.split(" ")
-    list_2 = dict2.split(" ")
-    list_3 = list_1 + list_2
-    spl_char = "!@#$%^&*()-_+"
-    for i in list_3:
-        if i in spl_char:
-            list_3.remove(i)
-    for i in list_3:
-        a_dict[i] = list_3.count(i)
-    dict_3 = load_stopwords("stopwords.txt")
-    for i in dict_3:
-        if i in a_dict:
-            del a_dict[i]
-    for i in list_3:
-        word_freq[i] = [list_1.count(i), list_2.count(i)]
+    word_1 = word_list(dict1)
+    word_2 = word_list(dict2)
+    stop_word = load_stopwords("stopwords.txt")
+    dict_1 = {}
+    dict_1 = create_dict(dict_1, word_1, 0)
+    dict_1 = create_dict(dict_1, word_2, 1)
+    words_freq = remove_stopwords(dict_1, stop_word)
     numer_n = sum([v[0]*v[1] for v in word_freq.values()])
     denom_1 = math.sqrt(sum([v[0]**2 for v in word_freq.values()]))
     denom_2 = math.sqrt(sum([v[1]**2 for v in word_freq.values()]))
