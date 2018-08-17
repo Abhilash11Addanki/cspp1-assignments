@@ -18,7 +18,7 @@ def similarity(dict1, dict2):
         if i in spl_char:
             list_3.remove(i)
     for i in list_3:
-        a_dict = list_3.count(i)
+        a_dict[i] = list_3.count(i)
     dict_3 = load_stopwords("stopwords.txt")
     for i in dict_3:
         if i in a_dict:
