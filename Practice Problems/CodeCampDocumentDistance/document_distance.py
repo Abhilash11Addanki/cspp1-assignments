@@ -6,8 +6,8 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    dict1.lower()
-    dict2.lower()
+    dict1 = dict1.lower()
+    dict2 = dict2.lower()
     a_dict = {}
     word_freq = {}
     list_1 = dict1.split(" ")
@@ -28,7 +28,7 @@ def similarity(dict1, dict2):
     numer_n = sum([v[0]*v[1] for v in word_freq.values()])
     denom_1 = math.sqrt(sum([v[0]**2 for v in word_freq.values()]))
     denom_2 = math.sqrt(sum([v[1]**2 for v in word_freq.values()]))
-    return numer_n/denom_1*denom_2
+    return numer_n/(denom_1*denom_2)
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
