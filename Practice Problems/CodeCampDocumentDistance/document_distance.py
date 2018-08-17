@@ -2,16 +2,18 @@
     Document Distance - A detailed description is given in the PDF
 '''
 import math
+import re
 def word_list(string):
     word = string.lower()
     word = word.split(" ")
     list_ = []
+    word_s = []
     for w in word:
         list_.append(w.strip())
-    for i in list_:
-        if i in "!@#$%^&*()_-+":
-            list_.remove(i)
-    return list_
+    regex = re.compile(['^a-z'])
+    for w in list_:
+        word_s.append(regex.sub("", w))
+    return word_s
 def create_dict(dict_1, word, index):
     for w in word:
         if w not in dict_1.keys():
@@ -33,6 +35,7 @@ def similarity(dict1, dict2):
     dict_1 = {}
     dict_1 = create_dict(dict_1, word_1, 0)
     dict_1 = create_dict(dict_1, word_2, 1)
+    print(dict_1)
     words_freq = remove_stopwords(dict_1, stop_word)
     numer_n = sum([v[0]*v[1] for v in words_freq.values()])
     denom_1 = math.sqrt(sum([v[0]**2 for v in words_freq.values()]))
