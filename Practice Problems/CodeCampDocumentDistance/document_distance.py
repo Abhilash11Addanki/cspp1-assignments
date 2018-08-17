@@ -8,11 +8,11 @@ def word_list(string):
     return [regex.sub("", w.strip()) for w in string.lower().split(" ")]
 def remove_stopwords(word, dict_1, stop_word, index):
     '''function to remove stopwords'''
-    for w in word:
-        if w not in stop_word and len(w)>0:
-            if w not in dict_1.keys():
-                dict_1[w] = [0,0]
-            dict_1[w][index] += 1
+    for w_1 in word:
+        if w_1 not in stop_word and len(w_1)>0:
+            if w_1 not in dict_1.keys():
+                dict_1[w_1] = [0, 0]
+            dict_1[w_1][index] += 1
     return dict_1
 def similarity(dict1, dict2):
     '''
