@@ -2,7 +2,6 @@
     Document Distance - A detailed description is given in the PDF
 '''
 import math
-
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
@@ -25,7 +24,7 @@ def similarity(dict1, dict2):
     for i in list_2:
         dict_2[i] = list_2.count(i)
     dict_3 = load_stopwords("stopwords.txt")
-    for i in dict_3.keys():
+    for i in dict_3:
         if i in dict_1.keys():
             del dict_1[i]
         if i in dict_2.keys():
