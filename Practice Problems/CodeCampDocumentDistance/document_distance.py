@@ -25,15 +25,10 @@ def similarity(dict1, dict2):
             del a_dict[i]
     for i in list_3:
         word_freq[i] = [list_1.count(i), list_2.count(i)]
-    numer_n = 0
-    denom_n1 = 0
-    denom_n2 = 0
-    for i in word_freq:
-        numer_n += word_freq[i][0]*word_freq[i][1]
-        denom_n1 += word_freq[i][0]**2
-        denom_n2 += word_freq[i][1]**2
-    denom_n = math.sqrt(denom_n1)*math.sqrt(denom_n2)
-    return numer_n/denom_n
+    numer_n = sum([v[0]*v[1] for v in word_freq.values()])
+    denom_1 = math.sqrt(sum([v[0]**2 for v in word_freq.values()]))
+    denom_2 = math.sqrt(sum([v[1]**2 for v in word_freq.values()]))
+    return numer_n/denom_1*denom_2
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
