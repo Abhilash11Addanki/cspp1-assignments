@@ -5,13 +5,14 @@ import math
 import re
 def word_list(string):
     regex = re.compile('[^a-z]')
-    return [regex.sub("",w.strip()) for w in string.lower().split(" ")]
+    return [regex.sub("", w.strip()) for w in string.lower().split(" ")]
 def remove_stopwords(word, dict_1, stop_word, index):
+    '''function to remove stopwords'''
     for w in word:
         if w not in stop_word and len(w)>0:
             if w not in dict_1.keys():
                 dict_1[w] = [0,0]
-            dict_1[w][index]+=1
+            dict_1[w][index] += 1
     return dict_1
 def similarity(dict1, dict2):
     '''
