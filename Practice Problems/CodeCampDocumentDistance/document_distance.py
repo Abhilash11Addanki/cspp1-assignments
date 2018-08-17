@@ -3,7 +3,7 @@
 '''
 import math
 
-def similarity(dict1.lower(), dict2.lower()):
+def similarity(dict1 = dict1.lower(), dict2 = dict2.lower()):
     '''
         Compute the document distance as given in the PDF
     '''
