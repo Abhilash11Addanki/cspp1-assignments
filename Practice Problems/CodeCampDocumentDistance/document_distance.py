@@ -33,7 +33,7 @@ def similarity(dict1, dict2):
         denom_n1 += word_freq[i][0]**2
         denom_n2 += word_freq[i][1]**2
     denom_n = math.sqrt(denom_n1)*math.sqrt(denom_n2)
-    return round(numer_n/denom_n, 1)
+    return round(numer_n/denom_n)
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
