@@ -13,12 +13,11 @@ def similarity(dict1, dict2):
     word_freq = {}
     list_1 = dict1.split(" ")
     list_2 = dict2.split(" ")
-    spl_char = "!@#$%^&*()-_+"
-    for i in list_1:
-        if i in spl_char:
-            list_1.remove(i)
-            list_2.remove(i)
     list_3 = list_1 + list_2
+    spl_char = "!@#$%^&*()-_+"
+    for i in list_3:
+        if i in spl_char:
+            list_3.remove(i)
     for i in list_1:
         dict_1[i] = list_1.count(i)
     for i in list_2:
