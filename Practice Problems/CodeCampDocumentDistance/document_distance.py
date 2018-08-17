@@ -8,8 +8,7 @@ def similarity(dict1, dict2):
     '''
     dict1.lower()
     dict2.lower()
-    dict_1 = {}
-    dict_2 = {}
+    a_dict = {}
     word_freq = {}
     list_1 = dict1.split(" ")
     list_2 = dict2.split(" ")
@@ -18,16 +17,12 @@ def similarity(dict1, dict2):
     for i in list_3:
         if i in spl_char:
             list_3.remove(i)
-    for i in list_1:
-        dict_1[i] = list_1.count(i)
-    for i in list_2:
-        dict_2[i] = list_2.count(i)
+    for i in list_3:
+        a_dict = list_3.count(i)
     dict_3 = load_stopwords("stopwords.txt")
     for i in dict_3:
-        if i in dict_1:
-            del dict_1[i]
-        if i in dict_2:
-            del dict_2[i]
+        if i in a_dict:
+            del a_dict[i]
     for i in list_3:
         word_freq[i] = [list_1.count(i), list_2.count(i)]
     numer_n = 0
