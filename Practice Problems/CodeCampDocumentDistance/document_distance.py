@@ -25,6 +25,7 @@ def similarity(dict1, dict2):
             del a_dict[i]
     for i in list_3:
         word_freq[i] = [list_1.count(i), list_2.count(i)]
+    word_freq.sort()
     numer_n = 0
     denom_n1 = 0
     denom_n2 = 0
