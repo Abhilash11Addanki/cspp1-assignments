@@ -6,16 +6,12 @@ import re
 def word_list(string):
     regex = re.compile('[^a-z]')
     return [regex.sub("",w.strip()) for w in string.lower().split(" ")]
-def create_dict(dict_1, word, index):
+def remove_stopwords(word, dict_1, stop_word, index):
     for w in word:
-        if w not in dict_1.keys():
-            dict_1[w] = [0,0]
-        dict_1[w][index]+=1
-    return dict_1
-def remove_stopwords(dict_1, stop_word):
-    for i in stop_word.keys():
-        if i in dict_1.keys():
-            del dict_1[i]
+        if w not in stop_word and len(w)>0:
+            if w not in dict_1.keys():
+                dict_1[w] = [0,0]
+            dict_1[w][index]+=1
     return dict_1
 def similarity(dict1, dict2):
     '''
@@ -25,9 +21,8 @@ def similarity(dict1, dict2):
     word_2 = word_list(dict2)
     stop_word = load_stopwords("stopwords.txt")
     dict_1 = {}
-    dict_1 = create_dict(dict_1, word_1, 0)
-    dict_1 = create_dict(dict_1, word_2, 1)
-    words_freq = remove_stopwords(dict_1, stop_word)
+    word_freq_1 = remove_stopwords(word_1, dict_1, stop_word, 0)
+    word_freq_2 = remove_stopwords(word_2, dict_1, stop_word, 1)
     numer_n = sum([v[0]*v[1] for v in words_freq.values()])
     denom_1 = math.sqrt(sum([v[0]**2 for v in words_freq.values()]))
     denom_2 = math.sqrt(sum([v[1]**2 for v in words_freq.values()]))
