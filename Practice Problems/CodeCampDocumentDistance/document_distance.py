@@ -4,12 +4,13 @@
 import math
 import re
 def word_list(string):
+    '''function to find the word list'''
     regex = re.compile('[^a-z]')
     return [regex.sub("", w.strip()) for w in string.lower().split(" ")]
 def remove_stopwords(word, dict_1, stop_word, index):
     '''function to remove stopwords'''
     for w_1 in word:
-        if w_1 not in stop_word and len(w_1)>0:
+        if w_1 not in stop_word and len(w_1) > 0:
             if w_1 not in dict_1.keys():
                 dict_1[w_1] = [0, 0]
             dict_1[w_1][index] += 1
