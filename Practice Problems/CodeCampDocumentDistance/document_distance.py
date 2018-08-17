@@ -3,15 +3,13 @@
 '''
 import math
 
-def similarity(dict1, dict2):
+def similarity(dict1.lower(), dict2.lower()):
     '''
         Compute the document distance as given in the PDF
     '''
     dict_1 = {}
     dict_2 = {}
     word_freq = {}
-    dict1 = dict1.lower()
-    dict2 = dict2.lower()
     list_1 = dict1.split(" ")
     list_2 = dict2.split(" ")
     spl_char = "!@#$%^&*()-_+"
