@@ -18,8 +18,6 @@ def similarity(dict1, dict2):
     for i in list_1:
         if i in spl_char:
             list_1.remove(i)
-    for i in list_2:
-        if i in spl_char:
             list_2.remove(i)
     list_3 = list_1 + list_2
     for i in list_1:
