@@ -28,7 +28,6 @@
 
     Note: PyLint score need not be 10/10. Anything above 9.5 is good.
 '''
-import re
 def search(search_index, query):
     '''
         function to search through the search index and return the results
@@ -38,16 +37,11 @@ def search(search_index, query):
         make a set of doc_id and return
     '''
     doc_id = []
-    doc_id1 = []
-    query_list = []
-    regex = re.compile('[^a-z]')
-    query_list += [regex.sub("", w.strip()) for w in query.lower().split(" ")]
-    for i in query_list:
-        if i in search_index:
-            doc_id += [search_index[i]]
-    for i in doc_id:
-        doc_id1 += [i[0][0]]
-    return set(doc_id1)
+    word = query.lower().split(" ")
+    for w in word:
+        if w in search_index:
+            doc_id += [i[0] for i in search_index[w]]
+    return set(doc_id)
 def process_queries(search_index, queries):
     '''
         function to process the search queries

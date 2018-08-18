@@ -43,11 +43,11 @@ def word_list(text):
     word_list = [regex.sub("", w.strip()) for w in text.lower().split(" ")]
     return word_list
 def remove_stopwords(word, stop_word):
-    lis2 = word[:]
-    for w1 in word:
-        if w1 in stop_word:
-            lis2.remove(w1)
-    return lis2
+    lis_2 = word.copy()
+    for w_1 in word:
+        if w_1 in stop_word:
+            lis_2.remove(w_1)
+    return lis_2
 def build_search_index(docs):
     '''
         Process the docs step by step as given below
