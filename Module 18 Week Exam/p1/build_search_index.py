@@ -40,9 +40,10 @@ def word_list(text):
         return a list of words
     '''
     regex = re.compile('[^a-z]')
-    word_list = [regex.sub("", w.strip()) for w in text.lower().split(" ")]
-    return word_list
+    word_l = [regex.sub("", w.strip()) for w in text.lower().split(" ")]
+    return word_l
 def remove_stopwords(word, stop_word):
+    '''Remove Stopwords function'''
     lis_2 = word.copy()
     for w_1 in word:
         if w_1 in stop_word:
