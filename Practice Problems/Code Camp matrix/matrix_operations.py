@@ -39,10 +39,7 @@ def read_matrix():
     cols_mat = int(inp[1])
     read_mat = [input().split(" ") for i in range(rows_mat)]
     mat = [[int(j) for j in i] for i in read_mat]
-    for rows in mat:
-        if rows_mat != len(mat) or len(rows) != rows_mat:
-            cnt = 1
-    if cnt == 1:
+    if rows_mat != len(mat):
         print("Error: Invalid input for the matrix")
         return None
     return mat
