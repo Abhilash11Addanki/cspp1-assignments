@@ -37,7 +37,7 @@ def read_matrix():
     rows_mat, cols_mat = input().split(",")
     read_mat = [input().split(" ") for i in range(int(rows_mat))]
     mat = [[int(j) for j in i] for i in read_mat]
-    if not all([True if len(i)==cols_mat else False for i in mat]):
+    if any([True if len(i)!= int(cols_mat) else False for i in mat]):
         print("Error: Invalid input for the matrix")
         return None
     return mat
