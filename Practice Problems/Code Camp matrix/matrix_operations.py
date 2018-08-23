@@ -22,6 +22,8 @@ def add_matrix(m1, m2):
     if len(m1) == len(m2):
         add_mat = [[i+j for i,j in zip(m1[i],m2[i])] for i in range(len(m1))]
         return add_mat
+    print("Error: Matrix shapes invalid for addition")
+    return None
 def read_matrix():
     '''
         read the matrix dimensions from input
