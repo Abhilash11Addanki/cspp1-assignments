@@ -40,11 +40,8 @@ def read_matrix():
     read_mat = [input().split(" ") for i in range(rows_mat)]
     mat = [[int(j) for j in i] for i in read_mat]
     if rows_mat != len(mat):
-        if len(mat[0]) != rows_mat:
-            print("Error: Invalid input for the matrix")
-        else:
-            print("Error: Invalid input for the matrix")
-            return None
+        print("Error: Invalid input for the matrix")
+        return None
     return mat
 def main():
     # read matrix 1
