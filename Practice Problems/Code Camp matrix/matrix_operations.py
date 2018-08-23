@@ -21,7 +21,7 @@ def add_matrix(m_1, m_2):
         error message should be "Error: Matrix shapes invalid for addition"
     '''
     if len(m_1) == len(m_2):
-        add_mat = [[i+j for i,j in zip(m_1[i],m_2[i])] for i in range(len(m_1))]
+        add_mat = [[i+j for i, j in zip(m_1[i], m_2[i])] for i in range(len(m_1))]
         return add_mat
     print("Error: Matrix shapes invalid for addition")
     return None
