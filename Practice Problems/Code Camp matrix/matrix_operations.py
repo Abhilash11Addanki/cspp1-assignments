@@ -42,13 +42,7 @@ def read_matrix():
         return None
     return mat
 def main():
-    # read matrix 1
-
-    # read matrix 2
-
-    # add matrix 1 and matrix 2
-
-    # multiply matrix 1 and matrix 2
+    '''Main Function.'''
     matrix_1 = read_matrix()
     matrix_2 = read_matrix()
     if matrix_1 != None and matrix_2 != None:
