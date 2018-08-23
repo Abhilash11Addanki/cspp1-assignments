@@ -9,9 +9,8 @@ def mult_matrix(m1, m2):
     if len(m1[0]) != len(m2):
         print("Error: Matrix shapes invalid for mult")
         return None
-    else:
-        res_m = [[sum([m1[i][k]*m2[k][j] for k in range(len(m2))]) for j in range(len(m2[0]))] for i in range(len(m1))]
-        return res_m
+    res_m = [[sum([m1[i][k]*m2[k][j] for k in range(len(m2))]) for j in range(len(m2[0]))] for i in range(len(m1))]
+    return res_m
 def add_matrix(m1, m2):
     '''
         check if the matrix shapes are similar
@@ -33,16 +32,12 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    cnt = 0
-    inp = input().split(",")
-    rows_mat = int(inp[0])
-    cols_mat = int(inp[1])
-    read_mat = [input().split(" ") for i in range(rows_mat)]
+    rows_mat , cols_mat = input().split(",")
+    read_mat = [input().split(" ") for i in range(int(rows_mat))]
     mat = [[int(j) for j in i] for i in read_mat]
-    for rows in mat:
-        if rows_mat != len(mat) or rows_mat != len(rows):
-            print("Error: Invalid input for the matrix")
-            return None
+    if int(rows_mat) != len(mat):
+        print("Error: Invalid input for the matrix")
+        return None
     return mat
 def main():
     # read matrix 1
