@@ -33,7 +33,7 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    rows_mat , cols_mat = input().split(",")
+    rows_mat, cols_mat = input().split(",")
     read_mat = [input().split(" ") for i in range(int(rows_mat))]
     mat = [[int(j) for j in i] for i in read_mat]
     if int(rows_mat) != len(mat):
