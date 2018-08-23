@@ -6,11 +6,12 @@ def mult_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
-    if len(m1[0]) == len(m2):
+    if len(m1[0]) != len(m2):
+        print("Error: Matrix shapes invalid for mult")
+        return None
+    else:
         res_m = [[sum([m1[i][k]*m2[k][j] for k in range(len(m2))]) for j in range(len(m2[0]))] for i in range(len(m1))]
         return res_m
-    print("Error: Matrix shapes invalid for mult")
-    return None
 def add_matrix(m1, m2):
     '''
         check if the matrix shapes are similar
@@ -37,7 +38,7 @@ def read_matrix():
     cols_mat = int(inp[1])
     read_mat = [input().split(" ") for i in range(rows_mat)]
     mat = [[int(j) for j in i] for i in read_mat]
-    if cols_mat != len(mat):
+    if rows_mat != len(mat):
         print("Error: Invalid input for the matrix")
         return None
     return mat
@@ -53,6 +54,6 @@ def main():
     matrix_2 = read_matrix()
     if matrix_1 != None and matrix_2 != None:
         print(add_matrix(matrix_1, matrix_2))
-    print(mult_matrix(matrix_1, matrix_2))
+        print(mult_matrix(matrix_1, matrix_2))
 if __name__ == '__main__':
     main()
