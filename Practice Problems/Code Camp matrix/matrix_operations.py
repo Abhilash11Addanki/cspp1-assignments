@@ -45,7 +45,7 @@ def main():
     '''Main Function.'''
     matrix_1 = read_matrix()
     matrix_2 = read_matrix()
-    if matrix_1 != None and matrix_2 != None:
+    if matrix_1 and matrix_2 is not None:
         print(add_matrix(matrix_1, matrix_2))
         print(mult_matrix(matrix_1, matrix_2))
 if __name__ == '__main__':
