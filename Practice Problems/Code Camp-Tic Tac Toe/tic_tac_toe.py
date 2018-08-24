@@ -2,7 +2,7 @@ def win_hand(game_hand):
     for i in game_hand:
         if i.count('x') == 3:
             return 'x'
-        if i.count('o') == 3:
+        elif i.count('o') == 3:
             return 'o'
 def invalid_input(game_hand):
     for i in game_hand:
