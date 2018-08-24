@@ -4,11 +4,11 @@ def invalid_input(game_hand):
     for i in game_hand:
         cnt_x += i.count('x')
         cnt_o += i.count('o')
-    if cnt_x-cnt_o > 1 or cnt_o-cnt_x >1:
-        return "invalid game"
+    return True if cnt_x-cnt_o > 1 or cnt_o-cnt_x > 1 else False
 def play_game(game_hand):
     '''Function for playing the game'''
-    invalid_input(game_hand)
+    if invalid_input(game_hand) is True:
+        print("invalid game")
 def read_input():
     read_input = [input().split(" ") for i in range(3)]
     return read_input
