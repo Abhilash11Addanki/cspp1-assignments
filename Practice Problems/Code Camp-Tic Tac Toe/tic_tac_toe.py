@@ -18,7 +18,7 @@ def invalid_game(game_hand):
 def play_game(game_hand):
     '''Function for playing the game'''
     if invalid_input(game_hand) is True:
-        return "invalid game"
+        return "invalid input"
     elif invalid_game(game_hand) is True:
         return "invalid game"
     print(win_hand(game_hand))
