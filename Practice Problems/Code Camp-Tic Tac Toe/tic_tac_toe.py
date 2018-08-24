@@ -1,29 +1,12 @@
 def win_hand(game_hand):
-    for i in game_hand:
-        if i[0] == i[1] == i[2] == 'x':
-            return 'x'
-        if i[0] == i[1] == i[2] == 'o':
-            return 'o'
-        if i[0][0] == i[1][0] == i[2][0] == 'x':
-            return 'x'
-        if i[0][1] == i[1][1] == i[2][1] == 'x':
-            return 'x'
-        if i[0][2] == i[1][2] == i[2][2] == 'x':
-            return 'x'
-        if i[0][0] == i[1][0] == i[2][0] == 'o':
-            return 'o'
-        if i[0][1] == i[1][1] == i[2][1] == 'o':
-            return 'o'
-        if i[0][2] == i[1][2] == i[2][2] == 'o':
-            return 'o'
-        if i[0][0] == i[1][1] == i[2][2] == 'x':
-            return 'x'
-        if i[0][2] == i[1][1] == i[2][0] == 'x':
-            return 'x'
-        if i[0][0] == i[1][1] == i[2][2] == 'o':
-            return 'o'
-        if i[0][2] == i[1][1] == i[2][0] == 'o':
-            return 'o'
+    if game_hand[0][0] == game_hand[0][1] == game_hand[0][2] == 'x'or
+       game_hand[1][0] == game_hand[1][1] == game_hand[1][2] == 'x'or
+       game_hand[2][0] == game_hand[2][1] == game_hand[2][2] == 'x':
+        return 'x'
+    if game_hand[0][0] == game_hand[0][1] == game_hand[0][2] == 'o'or
+       game_hand[1][0] == game_hand[1][1] == game_hand[1][2] == 'o'or
+       game_hand[2][0] == game_hand[2][1] == game_hand[2][2] == 'o':
+        return 'o'
 def invalid_input(game_hand):
     for i in game_hand:
         if i[0] not in 'xo.' or i[1] not in 'xo.' or i[2] not in 'xo.':
