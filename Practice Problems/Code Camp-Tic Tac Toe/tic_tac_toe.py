@@ -1,7 +1,7 @@
 def invalid_input(game_hand):
     for i in game_hand:
-        return True if i[0]or i[1] or i[2] not in 'xo.'
-    return False
+        if i[0] or i[1] or i[2] not in "xo.":
+            return True
 def invalid_game(game_hand):
     cnt_x = 0
     cnt_o = 0
