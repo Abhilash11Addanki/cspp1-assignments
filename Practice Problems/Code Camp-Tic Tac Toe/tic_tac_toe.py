@@ -1,10 +1,10 @@
 def win_hand(game_hand):
-    if game_hand[0][0] == game_hand[0][1] == game_hand[0][2] == 'x'or
-       game_hand[1][0] == game_hand[1][1] == game_hand[1][2] == 'x'or
+    if game_hand[0][0] == game_hand[0][1] == game_hand[0][2] == 'x' or
+       game_hand[1][0] == game_hand[1][1] == game_hand[1][2] == 'x' or
        game_hand[2][0] == game_hand[2][1] == game_hand[2][2] == 'x':
         return 'x'
-    if game_hand[0][0] == game_hand[0][1] == game_hand[0][2] == 'o'or
-       game_hand[1][0] == game_hand[1][1] == game_hand[1][2] == 'o'or
+    if game_hand[0][0] == game_hand[0][1] == game_hand[0][2] == 'o' or
+       game_hand[1][0] == game_hand[1][1] == game_hand[1][2] == 'o' or
        game_hand[2][0] == game_hand[2][1] == game_hand[2][2] == 'o':
         return 'o'
 def invalid_input(game_hand):
