@@ -8,7 +8,7 @@ def invalid_input(game_hand):
         print("invalid input")
 def play_game(game_hand):
     '''Function for playing the game'''
-    return game_hand
+    invalid_input(game_hand)
 def read_input():
     read_input = [input().split(" ") for i in range(3)]
     return read_input
