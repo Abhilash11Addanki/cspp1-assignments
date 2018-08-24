@@ -21,7 +21,8 @@ def play_game(game_hand):
         return "invalid input"
     elif invalid_game(game_hand) is True:
         return "invalid game"
-    print(win_hand(game_hand))
+    res_1 = win_hand(game_hand)
+    return res_1
 def read_input():
     read_input = [input().split(" ") for i in range(3)]
     return read_input
