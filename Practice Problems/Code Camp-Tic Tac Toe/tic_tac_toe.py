@@ -2,7 +2,8 @@ def win_hand(game_hand):
     for i in game_hand:
         if i.count('x') == 3:
             return 'x'
-        return 'o'
+        if i.count('o') == 3:
+            return 'o'
 def invalid_input(game_hand):
     for i in game_hand:
         if i[0] not in 'xo.' or i[1] not in 'xo.' or i[2] not in 'xo.':
