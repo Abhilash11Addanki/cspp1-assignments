@@ -19,7 +19,7 @@ def play_game(game_hand):
     '''Function for playing the game'''
     if invalid_game(game_hand) is True:
         return "invalid game"
-    if invalid_input(game_hand) is True:
+    elif invalid_input(game_hand) is True:
         return "invalid input"
 def read_input():
     read_input = [input().split(" ") for i in range(3)]
