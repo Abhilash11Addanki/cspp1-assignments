@@ -5,7 +5,7 @@ def invalid_input(game_hand):
         cnt_x += i.count('x')
         cnt_o += i.count('o')
     if cnt_x-cnt_o > 1 or cnt_o-cnt_x >1:
-        print("invalid input")
+        return "invalid game"
 def play_game(game_hand):
     '''Function for playing the game'''
     invalid_input(game_hand)
