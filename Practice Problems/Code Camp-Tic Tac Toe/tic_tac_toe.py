@@ -2,11 +2,15 @@ def win_hand(game_hand):
     for i in game_hand:
         if i[0] == i[1] == i[2] == 'x':
             return 'x'
-        elif i[0] == i[1] == i[2] == 'o':
+        if i[0] == i[1] == i[2] == 'o':
             return 'o'
-        elif i[0][0] == i[1][0] == i[2][0] == 'x':
+        if i[0][0] == i[1][0] == i[2][0] == 'x':
             return 'x'
-        elif i[0][0] == i[1][0] == i[2][0] == 'o':
+        if i[0][0] == i[1][0] == i[2][0] == 'o':
+            return 'o'
+        if i[0][0] == i[1][1] == i[2][2] == 'x' or i[0][2] == i[1][1] == i[2][0] == 'x':
+            return 'x'
+        if i[0][0] == i[1][1] == i[2][2] == 'o' or i[0][2] == i[1][1] == i[2][0] == 'o':
             return 'o'
 def invalid_input(game_hand):
     for i in game_hand:
