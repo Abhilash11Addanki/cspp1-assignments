@@ -17,10 +17,10 @@ def invalid_game(game_hand):
     return True if cnt_x-cnt_o > 1 or cnt_o-cnt_x > 1 else False
 def play_game(game_hand):
     '''Function for playing the game'''
-    if invalid_game(game_hand) is True:
-        return "invalid game"
-    elif invalid_input(game_hand) is True:
+    if invalid_input(game_hand) is True:
         return "invalid input"
+    elif invalid_game(game_hand) is True:
+        return "invalid game"
 def read_input():
     read_input = [input().split(" ") for i in range(3)]
     return read_input
