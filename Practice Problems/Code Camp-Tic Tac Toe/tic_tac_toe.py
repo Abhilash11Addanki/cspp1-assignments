@@ -1,7 +1,3 @@
-def win_hand(game_hand):
-    for i in game_hand:
-        if i[0] and i[1] and i[2] is "o":
-            return "o"
 def invalid_input(game_hand):
     for i in game_hand:
         if i[0] or i[1] or i[2] not in "xo.":
@@ -19,7 +15,6 @@ def play_game(game_hand):
         return "invalid game"
     elif invalid_game(game_hand) is True:
         return "invalid game"
-    print(win_hand(game_hand))
 def read_input():
     read_input = [input().split(" ") for i in range(3)]
     return read_input
