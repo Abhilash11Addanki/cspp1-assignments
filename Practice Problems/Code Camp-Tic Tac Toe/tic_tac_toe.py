@@ -6,7 +6,7 @@ def win_hand(game_hand):
             return 'o'
 def invalid_input(game_hand):
     for i in game_hand:
-        if i[0] or i[1] or i[2] not in "xo.":
+        if i[0] not in 'xo.' or i[1] not in 'xo.' or i[2] not in 'xo.':
             return True
 def invalid_game(game_hand):
     cnt_x = 0
@@ -19,7 +19,8 @@ def play_game(game_hand):
     '''Function for playing the game'''
     if invalid_game(game_hand) is True:
         return "invalid game"
-    print(win_hand(game_hand))
+    if invalid_input(game_hand) is True:
+        return "invalid input"
 def read_input():
     read_input = [input().split(" ") for i in range(3)]
     return read_input
