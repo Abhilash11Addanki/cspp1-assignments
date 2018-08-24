@@ -1,8 +1,9 @@
 def win_hand(game_hand):
-    if game_hand[0][0] == game_hand[0][1] == game_hand[0][2] == 'x' or game_hand[1][0] == game_hand[1][1] == game_hand[1][2] == 'x' or game_hand[2][0] == game_hand[2][1] == game_hand[2][2] == 'x':
-        return 'x'
-    elif game_hand[0][0] == game_hand[0][1] == game_hand[0][2] == 'o' or game_hand[1][0] == game_hand[1][1] == game_hand[1][2] == 'o' or game_hand[2][0] == game_hand[2][1] == game_hand[2][2] == 'o':
-        return 'o'
+    for i in game_hand:
+        if i.count('x') == 3:
+            return 'x'
+        if i.count('o') == 3:
+            return 'o'
 def invalid_input(game_hand):
     for i in game_hand:
         if i[0] not in 'xo.' or i[1] not in 'xo.' or i[2] not in 'xo.':
