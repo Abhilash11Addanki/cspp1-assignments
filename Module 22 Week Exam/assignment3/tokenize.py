@@ -9,9 +9,8 @@ def tokenize(string):
     list_ = string.split(";")
     for i in list_:
         list_1.append(i.split(" "))
-    return list_1
-    for char in list_:
-        dict_[char] = list_.count(char)
+    for char in list_1:
+        dict_[char] = list_1.count(char)
     return dict_
 def main():
     '''main function.'''
