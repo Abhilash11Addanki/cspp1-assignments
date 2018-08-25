@@ -11,6 +11,7 @@ def clean_string(string):
             res_str += ""
         else:
             res_str += char
+    res_str = res_str.replace(" ","")
     return res_str
 def main():
     '''main function'''
