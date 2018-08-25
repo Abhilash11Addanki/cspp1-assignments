@@ -7,11 +7,13 @@
     Complete the check_sudoku function to check if the given grid
     satisfies all the sudoku rules given in the statement above.
 '''
-def check_conditions(sudoku):
-    '''function for checking the rules of sudoku'''
+def check_row(sudoku):
+    '''function for checking the rules for row'''
     for row in sudoku:
         if sum([int(ele) for ele in row]) != 45:#Sum of numbers in a row should be equal to 45
             return False
+def check_column(sudoku):
+    '''function for checking the rules for column'''
     for row, list_ in enumerate(sudoku):
         sum_res = 0
         for column in range(len(list_)):
@@ -24,7 +26,7 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    if check_conditions(sudoku):
+    if check_row(sudoku) and check_column(sudoku):
         return True
     return False
 def main():
