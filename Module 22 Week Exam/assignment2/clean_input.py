@@ -1,5 +1,5 @@
 '''
-Write a function to clean up a given string by removing the special characters and retain 
+Write a function to clean up a given string by removing the special characters and retain
 alphabets in both upper and lower case and numbers.
 '''
 
@@ -11,7 +11,7 @@ def clean_string(string):
             res_str += ""
         else:
             res_str += char
-    res_str = res_str.replace(" ","")
+    res_str = res_str.replace(" ", "")
     return res_str
 def main():
     '''main function'''
