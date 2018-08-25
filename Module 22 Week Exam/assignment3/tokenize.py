@@ -12,7 +12,7 @@ def tokenize(string):
     return dict_
             
 def main():
-	'''main function'''
+    '''main function.'''
     n_1 = int(input())
     for str_ in range(n_1):
     	str_ = input()
