@@ -7,12 +7,8 @@
     Complete the check_sudoku function to check if the given grid
     satisfies all the sudoku rules given in the statement above.
 '''
-
-def check_sudoku(sudoku):
-    '''
-        Your solution goes here. You may add other helper functions as needed.
-        The function has to return True for a valid sudoku grid and false otherwise
-    '''
+def check_conditions(sudoku):
+    '''function for checking the rules of sudoku'''
     for row in sudoku:
         if sum([int(ele) for ele in row]) != 45:#Sum of numbers in a row should be equal to 45
             return False
@@ -23,7 +19,14 @@ def check_sudoku(sudoku):
         if sum_res != 45:
             return False
     return True
-
+def check_sudoku(sudoku):
+    '''
+        Your solution goes here. You may add other helper functions as needed.
+        The function has to return True for a valid sudoku grid and false otherwise
+    '''
+    if check_conditions(sudoku):
+        return True
+    return False
 def main():
     '''
         main function to read input sudoku from console
@@ -34,7 +37,7 @@ def main():
     sudoku = []
 
     # loop to read 9 lines of input from console
-    for i in range(9):
+    for row in range(9):
         # read a line, split it on SPACE and append row to list
         row = input().split(' ')
         sudoku.append(row)
