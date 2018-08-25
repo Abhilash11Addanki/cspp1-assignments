@@ -8,7 +8,7 @@ def frequency_graph(dictionary):
     list_dict = [ele for ele in dictionary.keys()]
     list_dict.sort()
     for ele in list_dict:
-        print("{} - {}".format(ele, "#"*list_dict[ele]))
+        print("{} - {}".format(ele, "#"*dictionary[ele]))
 
 def main():
     '''main function'''
