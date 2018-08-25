@@ -7,8 +7,9 @@ def tokenize(string):
     '''tokenize function.'''
     dict_ = {}
     list_ = string.split(" ")
+    return list_
     for char in list_:
-    	dict_[char] = string.count(char)
+    	dict_[char] = list_.count(char)
     return dict_
             
 def main():
