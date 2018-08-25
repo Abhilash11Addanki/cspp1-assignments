@@ -7,21 +7,21 @@ def frequency_graph(dictionary):
     list_dict = [ele for ele in dictionary.keys()]
     list_dict.sort()
     for ele in list_dict:
-        if dictionary[ele] is 1:
+        if dictionary[ele] == 1:
             print(ele, "-", "#")
-        elif dictionary[ele] is 2:
+        elif dictionary[ele] == 2:
             print(ele, "-", "##")
-        elif dictionary[ele] is 3:
+        elif dictionary[ele] == 3:
             print(ele, "-", "###")
-        elif dictionary[ele] is 4:
+        elif dictionary[ele] == 4:
             print(ele, "-", "####")
-        elif dictionary[ele] is 5:
+        elif dictionary[ele] == 5:
             print(ele, "-", "#####")
-        elif dictionary[ele] is 7:
+        elif dictionary[ele] == 7:
             print(ele, "-", "#######")
-        elif dictionary[ele] is 8:
+        elif dictionary[ele] == 8:
             print(ele, "-", "########")
-        elif dictionary[ele] is 11:
+        elif dictionary[ele] == 11:
             print(ele, "-", "###########")
 
 def main():
