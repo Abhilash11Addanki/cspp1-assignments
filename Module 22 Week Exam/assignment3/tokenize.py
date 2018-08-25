@@ -4,7 +4,7 @@ each word
 '''
 
 def tokenize(string):
-	'''function to tokenize string'''
+'''function to tokenize string'''
     dict_ = {}
     list_ = string.split(" ")
     for char in list_:
