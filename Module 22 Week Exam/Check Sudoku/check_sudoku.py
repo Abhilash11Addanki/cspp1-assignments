@@ -22,6 +22,7 @@ def check_sudoku(sudoku):
             sum_res += int(sudoku[column][row])
         if sum_res == 45:
             return True
+        return False
     return True
 
 def main():
@@ -29,7 +30,7 @@ def main():
         main function to read input sudoku from console
         call check_sudoku function and print the result to console
     '''
-    
+
     # initialize empty list
     sudoku = []
 
