@@ -12,8 +12,9 @@ def tokenize(string):
 def main():
     '''main function.'''
     n_1 = int(input())
-    for i in range(n_1):
-        i = input()
-    print(tokenize(i))
+    str_ = ""
+    for str_ in range(n_1):
+        str_ = input()
+    print(tokenize(str_))
 if __name__ == '__main__':
     main()
