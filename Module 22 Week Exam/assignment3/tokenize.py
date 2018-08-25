@@ -7,6 +7,7 @@ def tokenize(string):
     '''tokenize function.'''
     dict_ = {}
     list_ = string.split(" ")
+    return list_
     for char in list_:
     	dict_[char] = list_.count(char)
     return dict_
@@ -14,9 +15,10 @@ def tokenize(string):
 def main():
     '''main function.'''
     n_1 = int(input())
-    for str_ in range(n_1):
-    	str_ = input()
-    print(tokenize(str_))
+    res_str = ""
+    for str1 in range(n_1):
+    	str1 = input()
+    print(tokenize(res_str))
 
 if __name__ == '__main__':
     main()
