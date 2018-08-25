@@ -5,11 +5,13 @@ the key and frequency with a SPACE - SPACE.
 '''
 
 def print_dictionary(dictionary):
+    '''printing dictionary function'''
     list_dict = [ele for ele in dictionary.keys()]
     list_dict.sort()
     for ele in list_dict:
         print(ele, "-", dictionary[ele])
 def main():
+    '''main function'''
     dictionary = eval(input())
     print_dictionary(dictionary)
 
