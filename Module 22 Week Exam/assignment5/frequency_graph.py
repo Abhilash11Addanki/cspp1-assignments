@@ -8,22 +8,7 @@ def frequency_graph(dictionary):
     list_dict = [ele for ele in dictionary.keys()]
     list_dict.sort()
     for ele in list_dict:
-        if dictionary[ele] == 1:
-            print(ele, "-", "#")
-        elif dictionary[ele] == 2:
-            print(ele, "-", "##")
-        elif dictionary[ele] == 3:
-            print(ele, "-", "###")
-        elif dictionary[ele] == 4:
-            print(ele, "-", "####")
-        elif dictionary[ele] == 5:
-            print(ele, "-", "#####")
-        elif dictionary[ele] == 7:
-            print(ele, "-", "#######")
-        elif dictionary[ele] == 8:
-            print(ele, "-", "########")
-        elif dictionary[ele] == 11:
-            print(ele, "-", "###########")
+        print("{} - {}".format(ele, "#"*list_dict[ele]))
 
 def main():
     '''main function'''
