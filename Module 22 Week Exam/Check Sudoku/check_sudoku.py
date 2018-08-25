@@ -20,8 +20,7 @@ def check_sudoku(sudoku):
         sum_res = 0
         for column in range(len(list_)):
             sum_res += int(sudoku[column][row])
-        if sum_res == 45:
-            return True
+        if sum_res != 45:
         return False
     return True
 
