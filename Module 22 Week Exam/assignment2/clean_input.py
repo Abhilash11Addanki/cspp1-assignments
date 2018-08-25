@@ -7,7 +7,7 @@ def clean_string(string):
     '''function to clean string'''
     res_str = ""
     for char in string:
-        if char in "!@#$%^&*()_+":
+        if char in "!@#$%^&*()_+.":
             res_str += ""
         else:
             res_str += char
