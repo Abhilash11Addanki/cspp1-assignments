@@ -14,15 +14,15 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     for row in sudoku:
-        if sum([int(ele) for ele in row]) == 45:#Sum of numbers in a row should be equal to 45
-            for row, list_ in enumerate(sudoku):
-                sum_res = 0
-                for column in range(len(list_)):
-                    sum_res += int(sudoku[column][row])
-                if sum_res == 45:
-                    return True
-                return False
-        return False
+        if sum([int(ele) for ele in row]) != 45:#Sum of numbers in a row should be equal to 45
+            return False
+        for row, list_ in enumerate(sudoku):
+            sum_res = 0
+            for column in range(len(list_)):
+                sum_res += int(sudoku[column][row])
+            if sum_res == 45:
+                return True
+        return True
 
 def main():
     '''
