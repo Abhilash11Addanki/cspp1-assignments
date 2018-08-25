@@ -13,7 +13,7 @@ def main():
     '''main function.'''
     n_1 = int(input())
     for i in range(n_1):
-        str_1 = input()
-    print(tokenize(str_1))
+        i = input()
+    print(tokenize(i))
 if __name__ == '__main__':
     main()
