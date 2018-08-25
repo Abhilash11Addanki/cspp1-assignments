@@ -12,6 +12,7 @@ def check_row(sudoku):
     for row in sudoku:
         if sum([int(ele) for ele in row]) != 45:#Sum of numbers in a row should be equal to 45
             return False
+    return True
 def check_column(sudoku):
     '''function for checking the rules for column'''
     for row, list_ in enumerate(sudoku):
