@@ -8,7 +8,7 @@ def print_dictionary(dictionary):
     list_dict = [ele for ele in dictionary.keys()]
     list_dict.sort()
     for ele in list_dict:
-        print(ele ,"-" ,dictionary[ele])
+        print(ele, "-", dictionary[ele])
 def main():
     dictionary = eval(input())
     print_dictionary(dictionary)
